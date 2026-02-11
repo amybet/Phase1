@@ -66,7 +66,7 @@ public class ControllerNewAccount {
 		
 		// Fetch the username and password. (We use the first of the two here, but we will validate
 		// that the two password fields are the same before we do anything with it.)
-		String username = ViewNewAccount.text_Username.getText();
+		String username = ViewNewAccount.text_Username.getText().trim();
 		String password = ViewNewAccount.text_Password1.getText();
 		
 		// Display key information to the log
