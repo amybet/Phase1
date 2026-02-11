@@ -449,14 +449,14 @@ public class InputRecognizer {
 		// Let's ensure there is input
 		if (input.length() < 4) {
 			usernameErrorMessage = "Username must be at least 4 characters.\n";
-			return usernameErrorMessage + displayInput(input, input.length());
+			return usernameErrorMessage;
 		}
 		currentChar = input.charAt(0);		// The current character from the above indexed position
 
 		// Let's ensure the address is not too long
 		if (input.length() > 16) {
 			usernameErrorMessage = "Username cannot be more than 16 characters.\n";
-			return usernameErrorMessage + displayInput(input, 16);
+			return usernameErrorMessage;
 		}
 		running = true;						// Start the loop
 
@@ -503,6 +503,7 @@ public class InputRecognizer {
 
 				break;
 				// The execution of this state is finished
+				
 				
 			case 2: 
 				// State 1 has three valid transitions.  
@@ -551,11 +552,17 @@ public class InputRecognizer {
 			usernameIndexOfError = currentCharNdx;		// Copy the index of the current character;
 			usernameErrorMessage = "Username must start with a letter.\n";
 			return usernameErrorMessage;
-
+			
 		case 1:
-			// State 1 is a final state, so input is valid
+			// State 1 is a final state only when the whole input has been consumed.
 			usernameIndexOfError = currentCharNdx;		// Copy the index of the current character;
-			usernameErrorMessage = "";
+			if (currentCharNdx == input.length()) {
+				usernameErrorMessage = "";
+				return usernameErrorMessage;
+			}
+
+			usernameErrorMessage =
+					"Username can only contain letters, numbers, and '-', '_', '.'.\n";
 			return usernameErrorMessage;
 			 
 		case 2:
