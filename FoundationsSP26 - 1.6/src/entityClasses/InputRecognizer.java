@@ -178,7 +178,7 @@ public class InputRecognizer {
 			return emailAddressErrorMessage + displayInput(input, 320);
 		}
 		running = true;						// Start the loop
-		System.out.println("\nCurrent Final Input  Next  DomainName\nState   State Char  State  Size");
+		System.out.println("\nCurrent Final Input  Next  Date\nState   State Char  State  Size");
 
 		// The Finite State Machines continues until the end of the input is reached or at some 
 		// state the current character does not match any valid transition to a next state
@@ -459,6 +459,8 @@ public class InputRecognizer {
 			return usernameErrorMessage;
 		}
 		running = true;						// Start the loop
+		nextState = -1;						// There is no next state
+		System.out.println("\nCurrent Final Input  Next  Date\nState   State Char  State  Size");
 
 		// The Finite State Machines continues until the end of the input is reached or at some 
 		// state the current character does not match any valid transition to a next state
