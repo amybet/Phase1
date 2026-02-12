@@ -178,9 +178,9 @@ public class InputRecognizer {
 			return emailAddressErrorMessage + displayInput(input, 320);
 		}
 		running = true;						// Start the loop
-		System.out.println("\nCurrent Final Input  Next  DomainName\nState   State Char  State  Size");
+		// System.out.println("\nCurrent Final Input  Next  DomainName\nState   State Char  State  Size");
 
-		// The Finite State Machines continues until the end of the input is reached or at some 
+		// The Finite State Machines continues until the end of the input is reached or at some
 		// state the current character does not match any valid transition to a next state
 		while (running) {
 			// The switch statement takes the execution to the code for the current state, where
@@ -320,7 +320,7 @@ public class InputRecognizer {
 			}
 			
 			if (running) {
-				displayDebuggingInfo();
+				// displayDebuggingInfo();
 				// When the processing of a state has finished, the FSM proceeds to the next character
 				// in the input and if there is one, it fetches that character and updates the 
 				// currentChar.  If there is no next character the currentChar is set to a blank.
@@ -334,9 +334,9 @@ public class InputRecognizer {
 			// Should the FSM get here, the loop starts again
 
 		}
-		displayDebuggingInfo();
+		// displayDebuggingInfo();
 		
-		System.out.println("The loop has ended.");
+		// System.out.println("The loop has ended.");
 
 		emailAddressIndexofError = currentCharNdx;		// Copy the index of the current character;
 		
@@ -521,7 +521,7 @@ public class InputRecognizer {
 			}
 			
 			if (running) {
-				displayDebuggingInfo();
+				// displayDebuggingInfo();
 				// When the processing of a state has finished, the FSM proceeds to the next character
 				// in the input and if there is one, it fetches that character and updates the 
 				// currentChar.  If there is no next character the currentChar is set to a blank.
@@ -535,9 +535,9 @@ public class InputRecognizer {
 			// Should the FSM get here, the loop starts again
 
 		}
-		displayDebuggingInfo();
+		// displayDebuggingInfo();
 		
-		System.out.println("The loop has ended.");
+		// System.out.println("The loop has ended.");
 
 		usernameIndexOfError = currentCharNdx;		// Copy the index of the current character;
 		
@@ -612,7 +612,7 @@ public class InputRecognizer {
 		passwordInput = input;			// Save a copy of the input
 		running = true;						// Start the loop
 		nextState = -1;						// There is no next state
-		System.out.println("\nCurrent Final Input  Next  Date\nState   State Char  State  Size");
+		// System.out.println("\nCurrent Final Input  Next  Date\nState   State Char  State  Size");
 		
 		// This is the place where semantic actions for a transition to the initial state occur
 		
@@ -646,10 +646,10 @@ public class InputRecognizer {
 				case 1:
 					running = false;
 					break;
-					
+				
 			}
 			if (running) {
-				displayDebuggingInfo();
+				// displayDebuggingInfo();
 				// When the processing of a state has finished, the FSM proceeds to the next
 				// character in the input and if there is one, it fetches that character and
 				// updates the currentChar.  If there is no next character the currentChar is
@@ -667,9 +667,9 @@ public class InputRecognizer {
 			}
 			// Should the FSM get here, the loop starts again
 		}
-		displayDebuggingInfo();
+		// displayDebuggingInfo();
 		
-		System.out.println("The loop has ended.");
+		// System.out.println("The loop has ended.");
 		
 		// When the FSM halts, we must determine if the situation is an error or not.  That depends
 		// of the current state of the FSM and whether or not the whole string has been consumed.
@@ -738,7 +738,7 @@ public class InputRecognizer {
 		nameInput = input;			// Save a copy of the input
 		running = true;						// Start the loop
 		nextState = -1;						// There is no next state
-		System.out.println("\nCurrent Final Input  Next  Date\nState   State Char  State  Size");
+		// System.out.println("\nCurrent Final Input  Next  Date\nState   State Char  State  Size");
 		// This is the place where semantic actions for a transition to the initial state occur
 
 		int nameSize = 0;					// Initialize the password size
@@ -769,11 +769,11 @@ public class InputRecognizer {
 				case 1:
 					running = false;
 					break;
-					
+				
 			}
 			
 			if (running) {
-				displayDebuggingInfo();
+				// displayDebuggingInfo();
 				// When the processing of a state has finished, the FSM proceeds to the next
 				// character in the input and if there is one, it fetches that character and
 				// updates the currentChar.  If there is no next character the currentChar is
@@ -792,9 +792,9 @@ public class InputRecognizer {
 			// Should the FSM get here, the loop starts again
 	
 		}
-		displayDebuggingInfo();
+		// displayDebuggingInfo();
 		
-		System.out.println("The loop has ended.");
+		// System.out.println("The loop has ended.");
 		
 		// When the FSM halts, we must determine if the situation is an error or not.  That depends
 		// of the current state of the FSM and whether or not the whole string has been consumed.
